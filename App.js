@@ -180,6 +180,7 @@ const TabNavigator = ({ route }) => {
             );
           }
         },
+        headerShown: false,
       })}
     >
       <Tab.Screen
@@ -207,7 +208,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home">
+      <Drawer.Screen name="Assignment 5.3">
         {(props) => <TabNavigator {...props} />}
       </Drawer.Screen>
       <Drawer.Screen name="Feed" component={Feed} />
