@@ -7,6 +7,8 @@ import {
 } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 // TAB SCREEN COMPONENTS
@@ -197,8 +199,24 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="Assignment 5.3">
         {(props) => <TabNavigator {...props} />}
       </Drawer.Screen>
-      <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Article" component={Article} />
+      <Drawer.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          drawerIcon: () => {
+            return <FontAwesome name="feed" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Article"
+        component={Article}
+        options={{
+          drawerIcon: () => {
+            return <MaterialIcons name="article" />;
+          },
+        }}
+      />
     </Drawer.Navigator>
   );
 };
