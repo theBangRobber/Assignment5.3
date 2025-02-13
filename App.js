@@ -188,9 +188,6 @@ const TabNavigator = () => {
   );
 };
 
-// CREATE STACK NAVIGATOR
-const Stack = createStackNavigator();
-
 // CREATE DRAWER NAVIGATION
 const Drawer = createDrawerNavigator();
 
@@ -205,6 +202,9 @@ const DrawerNavigator = () => {
     </Drawer.Navigator>
   );
 };
+
+// CREATE STACK NAVIGATOR
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
