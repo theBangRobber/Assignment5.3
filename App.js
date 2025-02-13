@@ -152,7 +152,7 @@ const Article = ({ route }) => {
 // CREATE TAB NAVIGATION
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = ({ route }) => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
