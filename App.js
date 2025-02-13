@@ -153,14 +153,12 @@ const Article = ({ route }) => {
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = ({ route }) => {
-  const currentScreen = route.name || "Home";
-
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: "blue",
         tabBarInactiveTintColor: "gray",
-        tabBarIcon: ({ color, size }) => {
+        tabBarIcon: ({ color }) => {
           const iconSize = 24;
           if (route.name === "Home") {
             return (
@@ -180,19 +178,10 @@ const TabNavigator = ({ route }) => {
             );
           }
         },
-        headerShown: false,
+        headerShown: false, // HIDE DEFAULT TAB HEADER
       })}
     >
-      <Tab.Screen
-        name="Home"
-        component={
-          currentScreen === "Feed"
-            ? Feed
-            : currentScreen === "Article"
-            ? Article
-            : HomeScreen
-        }
-      />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
