@@ -9,6 +9,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 // TAB SCREEN COMPONENTS
@@ -196,15 +197,28 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Assignment 5.3">
+      <Drawer.Screen
+        name="Assignment 5.3"
+        options={{
+          drawerIcon: ({ focused, color, size }) => (
+            <MaterialCommunityIcons
+              name="menu"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      >
         {(props) => <TabNavigator {...props} />}
       </Drawer.Screen>
       <Drawer.Screen
         name="Feed"
         component={Feed}
         options={{
-          drawerIcon: () => {
-            return <FontAwesome name="feed" />;
+          drawerIcon: ({ focused, color, size }) => {
+            return (
+              <FontAwesome name="feed" size={size} color={color} />
+            );
           },
         }}
       />
@@ -212,8 +226,14 @@ const DrawerNavigator = () => {
         name="Article"
         component={Article}
         options={{
-          drawerIcon: () => {
-            return <MaterialIcons name="article" />;
+          drawerIcon: ({ focused, color, size }) => {
+            return (
+              <MaterialIcons
+                name="article"
+                size={size}
+                color={color}
+              />
+            );
           },
         }}
       />
